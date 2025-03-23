@@ -1,0 +1,10 @@
+^C:\USERS\DORIA\DOCUMENTS\GITHUB\RANDOMGAME\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/doria/Documents/GitHub/RandomGame -BC:/Users/doria/Documents/GitHub/RandomGame/Build --check-stamp-file C:/Users/doria/Documents/GitHub/RandomGame/Build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

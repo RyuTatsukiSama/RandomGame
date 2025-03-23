@@ -1,0 +1,10 @@
+^C:\USERS\DORIA\DOCUMENTS\GITHUB\RANDOMGAME\BUILD\CMAKEFILES\3E0D19A399267EC55BEEB7664A8E14F7\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/doria/Documents/GitHub/RandomGame -BC:/Users/doria/Documents/GitHub/RandomGame/Build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/doria/Documents/GitHub/RandomGame/Build/RandomGame.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
