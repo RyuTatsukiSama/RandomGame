@@ -3,10 +3,10 @@
 
 typedef enum STATE
 {
-	MAINMENU,
-	SETTINGS,
-	RAND,
 	QUIT,
+	RAND,
+	SETTINGS,
+	MAINMENU,
 	NOTHING
 }STATE;
 

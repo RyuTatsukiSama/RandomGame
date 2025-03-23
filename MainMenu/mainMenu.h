@@ -11,5 +11,4 @@ public:
     STATE Update();
 };
 
-
 #endif
