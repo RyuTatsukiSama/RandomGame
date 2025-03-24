@@ -3,7 +3,7 @@
 STATE MainMenu::Update()
 {
     int choice;
-    std::cout << "[1] Launch Random\n [2] Settings\n [0] Quit" << std::endl;
+    std::cout << "[1] Launch Random\n[2] Settings\n[0] Quit" << std::endl;
     std::cin >> choice;
 
     while (choice < 0 || choice > 2)
@@ -13,5 +13,6 @@ STATE MainMenu::Update()
         std::cin >> choice;
     }
 
+    system("cls");
     return (STATE)choice;
 }
