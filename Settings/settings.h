@@ -9,6 +9,11 @@ public:
     Settings() {}
     ~Settings() {}
     STATE Update();
+
+private:
+    void WriteInFile();
+
+    std::fstream file;
 };
 
 #endif
