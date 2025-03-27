@@ -18,13 +18,15 @@ STATE Settings::Update()
     {
         std::cout << "Please enter the path where you'r game are install" << std::endl;
         std::string path;
-        // std::cin >> path;
-        std::getline(std::cin, path);
-        std::getline(std::cin, path);
-        std::cout << path << std::endl;
+        int count = 0;
+        do
+        {
+            std::cin >> path;
+            file << path << std::endl;
+            std::cout << path << "/" << count << std::endl;
+            count++;
+        } while (path != "\n" && count < 3);
         
-        file << path;
-
         file.close();
 
         system("pause");
