@@ -25,6 +25,16 @@ STATE RandMenu::Update()
             return MAINMENU;
         }
 
+        std::string path;
+        file >> path;
+
+        std::cout << path << std::endl;
+
+        
+
+        for (const auto & entry : std::filesystem::directory_iterator("F:/"))
+            std::cout << entry.path() << std::endl;
+
         system("pause");
         system("cls");
         return MAINMENU;
