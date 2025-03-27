@@ -11,7 +11,7 @@ public:
     STATE Update();
 
 private:
-    void WriteInFile();
+    void WriteInFile(std::string _path);
 
     std::fstream file;
 };

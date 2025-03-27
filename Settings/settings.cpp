@@ -18,8 +18,14 @@ STATE Settings::Update()
     {
         std::cout << "Please enter the path where you'r game are install" << std::endl;
         std::string path;
+        // std::cin >> path;
+        std::getline(std::cin, path);
         std::getline(std::cin, path);
         std::cout << path << std::endl;
+        
+        file << path;
+
+        file.close();
 
         system("pause");
         system("cls");
@@ -27,7 +33,7 @@ STATE Settings::Update()
     }
 }
 
-void Settings::WriteInFile()
+void Settings::WriteInFile(std::string _path)
 {
-
+    
 }
