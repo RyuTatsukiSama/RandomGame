@@ -20,6 +20,8 @@ STATE RandMenu::Update()
             SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 4);
             std::cout << "ERROR : The settings file is empty, please go to settings menu to fill it" << std::endl;
             SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);
+
+            file.close();
             system("pause");
             system("cls");
             return MAINMENU;
@@ -30,13 +32,27 @@ STATE RandMenu::Update()
 
         std::cout << path << std::endl;
 
-        
+        std::filesystem::directory_entry directory(path);
+        SearchInDirectory(directory);
 
-        for (const auto & entry : std::filesystem::directory_iterator("F:/"))
-            std::cout << entry.path() << std::endl;
-
+        file.close();
         system("pause");
         system("cls");
         return MAINMENU;
+    }
+}
+
+void RandMenu::SearchInDirectory(std::filesystem::directory_entry directory)
+{
+    for (const std::filesystem::directory_entry &entry : std::filesystem::directory_iterator(directory.path()))
+    {
+        if (entry.is_directory())
+        {
+            SearchInDirectory(entry);
+        }
+        else
+        {
+            std::cout << entry.path() << std::endl;
+        }
     }
 }

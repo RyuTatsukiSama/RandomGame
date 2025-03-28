@@ -9,6 +9,9 @@ public:
     RandMenu() {}
     ~RandMenu() {}
     STATE Update();
+
+private:
+    void SearchInDirectory(std::filesystem::directory_entry directory);
 };
 
 #endif
