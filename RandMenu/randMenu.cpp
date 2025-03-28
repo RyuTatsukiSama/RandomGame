@@ -52,7 +52,12 @@ void RandMenu::SearchInDirectory(std::filesystem::directory_entry directory)
         }
         else
         {
-            std::cout << entry.path() << std::endl;
+            // For checking if the path is an exe, try to turn it into a array and check the four last char to know if they are 'e' 'x' 'e' '.'
+
+            if (entry.path().filename().extension() == ".exe")
+            {
+                std::cout << entry.path().filename() << std::endl;
+            }
         }
     }
 }
