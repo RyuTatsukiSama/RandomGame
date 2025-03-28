@@ -16,17 +16,34 @@ STATE Settings::Update()
     }
     else
     {
-        std::cout << "Please enter the path where you'r game are install" << std::endl;
-        std::string path;
+        std::cout << "Please enter the path where you'r game are install\nSperate them with \" _ \" \nEnter \"0\" to exit" << std::endl;
+        std::string path = "";
+        std::string input = "";
+
         int count = 0;
         do
         {
-            std::cin >> path;
-            file << path << std::endl;
-            std::cout << path << "/" << count << std::endl;
+            std::cin >> input;
+
+            if (input == "_")
+            {
+                std::cout << "Path enter " << path << std::endl;
+                file << path << std::endl;
+                path = "";
+            }
+            else
+            {
+                if (path != "")
+                {
+                    path += " ";
+                }
+
+                path += input;
+            }
+            std::cout << "input : " << input << std::endl;
             count++;
-        } while (path != "\n" && count < 3);
-        
+        } while (input != "0");
+
         file.close();
 
         system("pause");
@@ -37,5 +54,4 @@ STATE Settings::Update()
 
 void Settings::WriteInFile(std::string _path)
 {
-    
 }
