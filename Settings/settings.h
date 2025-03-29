@@ -11,9 +11,14 @@ public:
     STATE Update();
 
 private:
-    void WriteInFile(std::string _path);
+    void WritePathInFile();
+    void BrowseSettingsFile();
+    void SearchInDirectory(std::filesystem::directory_entry directory);
+    void WriteExeInFile();
 
     std::fstream file;
+    std::unordered_map<std::string,int> ignore;
+    std::vector<std::string> exeVec;
 };
 
 #endif

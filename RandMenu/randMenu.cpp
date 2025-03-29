@@ -27,37 +27,9 @@ STATE RandMenu::Update()
             return MAINMENU;
         }
 
-        std::string path;
-        file >> path;
-
-        std::cout << path << std::endl;
-
-        std::filesystem::directory_entry directory(path);
-        SearchInDirectory(directory);
-
-        file.close();
+        
         system("pause");
         system("cls");
         return MAINMENU;
-    }
-}
-
-void RandMenu::SearchInDirectory(std::filesystem::directory_entry directory)
-{
-    for (const std::filesystem::directory_entry &entry : std::filesystem::directory_iterator(directory.path()))
-    {
-        if (entry.is_directory())
-        {
-            SearchInDirectory(entry);
-        }
-        else
-        {
-            // For checking if the path is an exe, try to turn it into a array and check the four last char to know if they are 'e' 'x' 'e' '.'
-
-            if (entry.path().filename().extension() == ".exe")
-            {
-                std::cout << entry.path().filename() << std::endl;
-            }
-        }
     }
 }
